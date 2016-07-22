@@ -42,7 +42,7 @@ rangle={0.0,0.0,0.0};
 rangle[[1]]=ArcTan[1-2*(q1*q1+q2*q2),2*q0*q1+2*q2*q3];
 rangle[[2]]=ArcSin[2*q0*q2-2*q3*q1];
 rangle[[3]]=ArcTan[1-2*(q2*q2+q3*q3),2*q0*q3+2*q1*q2];
-Yaya Zhai
+
 Return[{rangle[[1]]*180/Pi,rangle[[2]]*180/Pi,rangle[[3]]*180/Pi}];
 ];
 
