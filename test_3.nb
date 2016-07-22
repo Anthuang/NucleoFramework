@@ -1,0 +1,691 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     30089,        683]
+NotebookOptionsPosition[     29354,        652]
+NotebookOutlinePosition[     29707,        668]
+CellTagsIndexPosition[     29664,        665]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<NucleoFramework`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.6737440379491653`*^9, 3.673744038060676*^9}, {
+  3.67374428689419*^9, 3.673744287315786*^9}},
+ EmphasizeSyntaxErrors->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NucleoFramework`ConnectNucleo", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.673056824687264*^9, 3.673056846828498*^9}, 
+   3.674345409412318*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["DeviceObject",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         PaneBox[
+          ButtonBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "FEBitmaps", "SquarePlusIconMedium"],
+            ImageSizeCache->{12., {0., 12.}}],
+           Appearance->None,
+           ButtonFunction:>(Typeset`open$$ = True),
+           Evaluator->Automatic,
+           Method->"Preemptive"],
+          Alignment->{Center, Center},
+          
+          ImageSize->
+           Dynamic[{
+            Automatic, 3.5 CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+             Magnification]}]], 
+         GraphicsBox[
+          {Thickness[0.038461538461538464`], 
+           {FaceForm[{RGBColor[0.941, 0.961, 0.957], Opacity[1.]}], 
+            FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 
+             3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{25.5, 2.5}, {25.5, 
+             1.395}, {24.605, 0.5}, {23.5, 0.5}, {2.5, 0.5}, {1.395, 0.5}, {
+             0.5, 1.395}, {0.5, 2.5}, {0.5, 23.5}, {0.5, 24.605}, {1.395, 
+             25.5}, {2.5, 25.5}, {23.5, 25.5}, {24.605, 25.5}, {25.5, 
+             24.605}, {25.5, 23.5}, {25.5, 2.5}}}]}, 
+           {RGBColor[0.7, 0.7, 0.7], Opacity[1.], JoinForm[{"Miter", 10.}], 
+            JoinedCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 
+             3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{25.5, 2.5}, {25.5, 
+             1.395}, {24.605, 0.5}, {23.5, 0.5}, {2.5, 0.5}, {1.395, 0.5}, {
+             0.5, 1.395}, {0.5, 2.5}, {0.5, 23.5}, {0.5, 24.605}, {1.395, 
+             25.5}, {2.5, 25.5}, {23.5, 25.5}, {24.605, 25.5}, {25.5, 
+             24.605}, {25.5, 23.5}, {25.5, 2.5}}},
+             CurveClosed->{1}]}, 
+           {FaceForm[{RGBColor[0.5423, 0.63104, 0.63597], Opacity[1.]}], 
+            FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 
+             3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{11.133, 
+             18.727999999999998`}, {11.133, 18.451999999999998`}, {
+             11.357000000000001`, 18.227999999999998`}, {11.633, 
+             18.227999999999998`}, {14.792, 18.227999999999998`}, {15.068, 
+             18.227999999999998`}, {15.292, 18.451999999999998`}, {15.292, 
+             18.727999999999998`}, {15.292, 20.639000000000003`}, {15.292, 
+             20.915}, {15.068, 21.139000000000003`}, {14.792, 
+             21.139000000000003`}, {11.633, 21.139000000000003`}, {
+             11.357000000000001`, 21.139000000000003`}, {11.133, 20.915}, {
+             11.133, 20.639000000000003`}, {11.133, 
+             18.727999999999998`}}}]}, 
+           {FaceForm[{RGBColor[0.5, 0.5, 0.5], Opacity[1.]}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+             12.357000000000001`, 1.}, {14.113000000000001`, 1.}, {
+             14.113000000000001`, 9.554}, {12.357000000000001`, 9.554}}}]}, 
+           {FaceForm[{RGBColor[0.624375, 0.695304, 0.691308], Opacity[1.]}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+             1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0,
+              1, 0}}}, {{{15.876000000000001`, 19.799}, {8.122, 19.799}, {
+             8.122, 11.516}, {10.573, 11.516}, {10.573, 11.493}, {
+             11.982000000000001`, 9.171}, {14.539, 9.171}, {
+             15.876000000000001`, 11.493}, {15.876000000000001`, 11.516}, {
+             18.326, 11.516}, {18.326, 19.799}, {15.876000000000001`, 
+             19.799}}}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+             8.806000000000001, 7.993}, {9.995000000000001, 7.993}, {
+             9.995000000000001, 11.008}, {8.806000000000001, 11.008}}}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{16.5, 
+             7.993}, {17.689, 7.993}, {17.689, 11.008}, {16.5, 11.008}}}]}},
+          AspectRatio->Automatic,
+          ImageSize->{Automatic, 
+            Dynamic[3.5 CurrentValue["FontCapHeight"]]},
+          PlotRange->{{0., 26.}, {0., 26.}}], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Class: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"Serial\"\>",
+              "SummaryItem"]}], 
+            RowBox[{
+             TagBox["\<\"ID: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["1",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox[
+              DynamicModuleBox[{Devices`DeviceAPI`DeviceDump`lights$$ = {
+                Style[
+                 Graphics[{{
+                    RGBColor[0.88, 1, 0.88], 
+                    Disk[{0, 0}]}, {
+                    RGBColor[0, 0.85, 0], 
+                    Circle[{0, 0}]}}, PlotRange -> {-2.2, 1.1}, ImageSize -> 
+                  9, ImageMargins -> {{3, 3}, {2, 0}}, 
+                  BaseStyle -> {CacheGraphics -> False}], Selectable -> 
+                 False], 
+                Style[
+                 Graphics[{{
+                    RGBColor[1, 1, 0], 
+                    Disk[{0, 0}]}, {
+                    RGBColor[0.8, 0.8, 0], 
+                    Circle[{0, 0}]}}, PlotRange -> {-2.2, 1.1}, ImageSize -> 
+                  9, ImageMargins -> {{3, 3}, {2, 0}}, 
+                  BaseStyle -> {CacheGraphics -> False}], Selectable -> 
+                 False]}, Devices`DeviceAPI`DeviceDump`opacities$$ = {
+                Opacity[1], 
+                Opacity[0.2]}, Devices`DeviceAPI`DeviceDump`status$$ = {
+               "Connected (/dev/cu.usbmodem1413)", 
+                "Not connected (/dev/cu.usbmodem1413)"}, 
+               Devices`DeviceAPI`DeviceDump`d$$ = DeviceObject[{"Serial", 1}],
+                Devices`DeviceAPI`DeviceDump`ind$$ = 1, 
+               Devices`DeviceAPI`DeviceDump`indr$$ = 1}, 
+               DynamicBox[ToBoxes[Devices`DeviceAPI`DeviceDump`ind$$ = If[
+                    DeviceOpenQ[Devices`DeviceAPI`DeviceDump`d$$], 1, 2]; 
+                 Devices`DeviceAPI`DeviceDump`indr$$ = If[
+                    DeviceFramework`DeviceRegisteredQ[
+                    Devices`DeviceAPI`DeviceDump`d$$], 1, 2]; Style[
+                   Row[{
+                    Part[
+                    Devices`DeviceAPI`DeviceDump`lights$$, 
+                    Devices`DeviceAPI`DeviceDump`ind$$], 
+                    Part[
+                    Devices`DeviceAPI`DeviceDump`status$$, 
+                    Devices`DeviceAPI`DeviceDump`ind$$]}], 
+                   Part[
+                   Devices`DeviceAPI`DeviceDump`opacities$$, 
+                    Devices`DeviceAPI`DeviceDump`indr$$]], StandardForm],
+                ImageSizeCache->{187., {5., 9.}}],
+               DynamicModuleValues:>{}],
+              "SummaryItem"]}], "\[SpanFromLeft]"}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         PaneBox[
+          ButtonBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "FEBitmaps", "SquareMinusIconMedium"]],
+           Appearance->None,
+           ButtonFunction:>(Typeset`open$$ = False),
+           Evaluator->Automatic,
+           Method->"Preemptive"],
+          Alignment->{Center, Center},
+          
+          ImageSize->
+           Dynamic[{
+            Automatic, 3.5 CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+             Magnification]}]], 
+         GraphicsBox[
+          {Thickness[0.038461538461538464`], 
+           {FaceForm[{RGBColor[0.941, 0.961, 0.957], Opacity[1.]}], 
+            FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 
+             3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{25.5, 2.5}, {25.5, 
+             1.395}, {24.605, 0.5}, {23.5, 0.5}, {2.5, 0.5}, {1.395, 0.5}, {
+             0.5, 1.395}, {0.5, 2.5}, {0.5, 23.5}, {0.5, 24.605}, {1.395, 
+             25.5}, {2.5, 25.5}, {23.5, 25.5}, {24.605, 25.5}, {25.5, 
+             24.605}, {25.5, 23.5}, {25.5, 2.5}}}]}, 
+           {RGBColor[0.7, 0.7, 0.7], Opacity[1.], JoinForm[{"Miter", 10.}], 
+            JoinedCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 
+             3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{25.5, 2.5}, {25.5, 
+             1.395}, {24.605, 0.5}, {23.5, 0.5}, {2.5, 0.5}, {1.395, 0.5}, {
+             0.5, 1.395}, {0.5, 2.5}, {0.5, 23.5}, {0.5, 24.605}, {1.395, 
+             25.5}, {2.5, 25.5}, {23.5, 25.5}, {24.605, 25.5}, {25.5, 
+             24.605}, {25.5, 23.5}, {25.5, 2.5}}},
+             CurveClosed->{1}]}, 
+           {FaceForm[{RGBColor[0.5423, 0.63104, 0.63597], Opacity[1.]}], 
+            FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 
+             3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{11.133, 
+             18.727999999999998`}, {11.133, 18.451999999999998`}, {
+             11.357000000000001`, 18.227999999999998`}, {11.633, 
+             18.227999999999998`}, {14.792, 18.227999999999998`}, {15.068, 
+             18.227999999999998`}, {15.292, 18.451999999999998`}, {15.292, 
+             18.727999999999998`}, {15.292, 20.639000000000003`}, {15.292, 
+             20.915}, {15.068, 21.139000000000003`}, {14.792, 
+             21.139000000000003`}, {11.633, 21.139000000000003`}, {
+             11.357000000000001`, 21.139000000000003`}, {11.133, 20.915}, {
+             11.133, 20.639000000000003`}, {11.133, 
+             18.727999999999998`}}}]}, 
+           {FaceForm[{RGBColor[0.5, 0.5, 0.5], Opacity[1.]}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+             12.357000000000001`, 1.}, {14.113000000000001`, 1.}, {
+             14.113000000000001`, 9.554}, {12.357000000000001`, 9.554}}}]}, 
+           {FaceForm[{RGBColor[0.624375, 0.695304, 0.691308], Opacity[1.]}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+             1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0,
+              1, 0}}}, {{{15.876000000000001`, 19.799}, {8.122, 19.799}, {
+             8.122, 11.516}, {10.573, 11.516}, {10.573, 11.493}, {
+             11.982000000000001`, 9.171}, {14.539, 9.171}, {
+             15.876000000000001`, 11.493}, {15.876000000000001`, 11.516}, {
+             18.326, 11.516}, {18.326, 19.799}, {15.876000000000001`, 
+             19.799}}}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+             8.806000000000001, 7.993}, {9.995000000000001, 7.993}, {
+             9.995000000000001, 11.008}, {8.806000000000001, 11.008}}}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{16.5, 
+             7.993}, {17.689, 7.993}, {17.689, 11.008}, {16.5, 11.008}}}]}},
+          AspectRatio->Automatic,
+          ImageSize->{Automatic, 
+            Dynamic[3.5 CurrentValue["FontCapHeight"]]},
+          PlotRange->{{0., 26.}, {0., 26.}}], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Class: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"Serial\"\>",
+              "SummaryItem"]}], 
+            RowBox[{
+             TagBox["\<\"ID: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["1",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox[
+              DynamicModuleBox[{Devices`DeviceAPI`DeviceDump`lights$$ = {
+                Style[
+                 Graphics[{{
+                    RGBColor[0.88, 1, 0.88], 
+                    Disk[{0, 0}]}, {
+                    RGBColor[0, 0.85, 0], 
+                    Circle[{0, 0}]}}, PlotRange -> {-2.2, 1.1}, ImageSize -> 
+                  9, ImageMargins -> {{3, 3}, {2, 0}}, 
+                  BaseStyle -> {CacheGraphics -> False}], Selectable -> 
+                 False], 
+                Style[
+                 Graphics[{{
+                    RGBColor[1, 1, 0], 
+                    Disk[{0, 0}]}, {
+                    RGBColor[0.8, 0.8, 0], 
+                    Circle[{0, 0}]}}, PlotRange -> {-2.2, 1.1}, ImageSize -> 
+                  9, ImageMargins -> {{3, 3}, {2, 0}}, 
+                  BaseStyle -> {CacheGraphics -> False}], Selectable -> 
+                 False]}, Devices`DeviceAPI`DeviceDump`opacities$$ = {
+                Opacity[1], 
+                Opacity[0.2]}, Devices`DeviceAPI`DeviceDump`status$$ = {
+               "Connected (/dev/cu.usbmodem1413)", 
+                "Not connected (/dev/cu.usbmodem1413)"}, 
+               Devices`DeviceAPI`DeviceDump`d$$ = DeviceObject[{"Serial", 1}],
+                Devices`DeviceAPI`DeviceDump`ind$$, 
+               Devices`DeviceAPI`DeviceDump`indr$$}, 
+               DynamicBox[ToBoxes[Devices`DeviceAPI`DeviceDump`ind$$ = If[
+                    DeviceOpenQ[Devices`DeviceAPI`DeviceDump`d$$], 1, 2]; 
+                 Devices`DeviceAPI`DeviceDump`indr$$ = If[
+                    DeviceFramework`DeviceRegisteredQ[
+                    Devices`DeviceAPI`DeviceDump`d$$], 1, 2]; Style[
+                   Row[{
+                    Part[
+                    Devices`DeviceAPI`DeviceDump`lights$$, 
+                    Devices`DeviceAPI`DeviceDump`ind$$], 
+                    Part[
+                    Devices`DeviceAPI`DeviceDump`status$$, 
+                    Devices`DeviceAPI`DeviceDump`ind$$]}], 
+                   Part[
+                   Devices`DeviceAPI`DeviceDump`opacities$$, 
+                    Devices`DeviceAPI`DeviceDump`indr$$]], StandardForm]],
+               DynamicModuleValues:>{}],
+              "SummaryItem"]}], "\[SpanFromLeft]"},
+           {
+            TagBox[
+             DynamicModuleBox[{Devices`DeviceAPI`DeviceDump`opacities$$ = {
+               Opacity[1], 
+               Opacity[0.2]}, Devices`DeviceAPI`DeviceDump`d$$ = 
+              DeviceObject[{"Serial", 1}], 
+              Devices`DeviceAPI`DeviceDump`props$$, 
+              Devices`DeviceAPI`DeviceDump`vals$$, 
+              Devices`DeviceAPI`DeviceDump`reg$$}, 
+              
+              DynamicBox[ToBoxes[
+               Devices`DeviceAPI`DeviceDump`reg$$ = 
+                 DeviceFramework`DeviceRegisteredQ[
+                  Devices`DeviceAPI`DeviceDump`d$$]; 
+                Devices`DeviceAPI`DeviceDump`props$$ = 
+                 DeviceFramework`DeviceExternalProperties[
+                  Devices`DeviceAPI`DeviceDump`d$$]; 
+                Devices`DeviceAPI`DeviceDump`vals$$ = 
+                 Devices`DeviceAPI`DeviceDump`d$$[
+                  Devices`DeviceAPI`DeviceDump`props$$]; Column[
+                  Join[{
+                    BoxForm`SummaryItem[{"Properties: ", 
+                    If[
+                    Or[
+                    Not[Devices`DeviceAPI`DeviceDump`reg$$], 
+                    Devices`DeviceAPI`DeviceDump`props$$ === {}], 
+                    Style[None, 
+                    Part[Devices`DeviceAPI`DeviceDump`opacities$$, 
+                    If[Devices`DeviceAPI`DeviceDump`reg$$, 1, 2]]], ""]}]}, 
+                   MapThread[BoxForm`SummaryItem[{
+                    StringJoin["      ", 
+                    ToString[#], ": "], #2}]& , {
+                    Devices`DeviceAPI`DeviceDump`props$$, 
+                    Devices`DeviceAPI`DeviceDump`vals$$}]]], StandardForm]],
+              DynamicModuleValues:>{}],
+             "SummaryItem"], "\[SpanFromLeft]"}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  DeviceObject[{"Serial", 1}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.676605212774288*^9, 3.6766052163799067`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"NucleoFramework`Init", "[", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NucleoFramework`ConstructIMUGUI", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.6737493773158903`*^9, 3.673749378562908*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{ButtonBox["\"Enable Gyr\"", ButtonFunction :> (Print[
+           NucleoFramework`EnableGyr[]]; 
+         NucleoFramework`Private`$IMUflag = True; 
+         NucleoFramework`Private`$gyrflag = True; Null), Appearance -> 
+        Automatic, Evaluator -> Automatic, Method -> "Preemptive"],ButtonBox[
+       "\"Disable Gyr\"", 
+        ButtonFunction :> (NucleoFramework`Private`$gyrflag = False; If[
+           And[
+            Not[NucleoFramework`Private`$gyrflag], 
+            Not[NucleoFramework`Private`$accflag], 
+            Not[NucleoFramework`Private`$magflag], 
+            Not[NucleoFramework`Private`$IMUgraphflag]], 
+           NucleoFramework`Private`$IMUflag = False, Null]; Null), Appearance -> 
+        Automatic, Evaluator -> Automatic, Method -> "Preemptive"]},
+      "RowDefault"]},
+    {
+     TemplateBox[{ButtonBox["\"Enable Acc\"", ButtonFunction :> (Print[
+           NucleoFramework`EnableAcc[]]; 
+         NucleoFramework`Private`$IMUflag = True; 
+         NucleoFramework`Private`$accflag = True; Null), Appearance -> 
+        Automatic, Evaluator -> Automatic, Method -> "Preemptive"],ButtonBox[
+       "\"Disable Acc\"", 
+        ButtonFunction :> (NucleoFramework`Private`$accflag = False; If[
+           And[
+            Not[NucleoFramework`Private`$gyrflag], 
+            Not[NucleoFramework`Private`$accflag], 
+            Not[NucleoFramework`Private`$magflag], 
+            Not[NucleoFramework`Private`$IMUgraphflag]], 
+           NucleoFramework`Private`$IMUflag = False, Null]; Null), Appearance -> 
+        Automatic, Evaluator -> Automatic, Method -> "Preemptive"]},
+      "RowDefault"]},
+    {
+     TemplateBox[{ButtonBox["\"Enable Mag\"", ButtonFunction :> (Print[
+           NucleoFramework`EnableMag[]]; 
+         NucleoFramework`Private`$IMUflag = True; 
+         NucleoFramework`Private`$magflag = True; Null), Appearance -> 
+        Automatic, Evaluator -> Automatic, Method -> "Preemptive"],ButtonBox[
+       "\"Disable Mag\"", 
+        ButtonFunction :> (NucleoFramework`Private`$magflag = False; If[
+           And[
+            Not[NucleoFramework`Private`$gyrflag], 
+            Not[NucleoFramework`Private`$accflag], 
+            Not[NucleoFramework`Private`$magflag], 
+            Not[NucleoFramework`Private`$IMUgraphflag]], 
+           NucleoFramework`Private`$IMUflag = False, Null]; Null), Appearance -> 
+        Automatic, Evaluator -> Automatic, Method -> "Preemptive"]},
+      "RowDefault"]},
+    {
+     TemplateBox[{ButtonBox["\"Enable IMU\"", ButtonFunction :> (Print[
+           NucleoFramework`EnableIMU[]]; 
+         NucleoFramework`Private`$IMUflag = True; 
+         NucleoFramework`Private`$IMUgraphflag = True; Null), Appearance -> 
+        Automatic, Evaluator -> Automatic, Method -> "Preemptive"],ButtonBox[
+       "\"Disable IMU\"", 
+        ButtonFunction :> (NucleoFramework`Private`$IMUgraphflag = False; If[
+           And[
+            Not[NucleoFramework`Private`$gyrflag], 
+            Not[NucleoFramework`Private`$accflag], 
+            Not[NucleoFramework`Private`$magflag], 
+            Not[NucleoFramework`Private`$IMUgraphflag]], 
+           NucleoFramework`Private`$IMUflag = False, Null]; Null), Appearance -> 
+        Automatic, Evaluator -> Automatic, Method -> "Preemptive"]},
+      "RowDefault"]},
+    {
+     ButtonBox["\<\"Stop\"\>",
+      Appearance->Automatic,
+      ButtonFunction:>(NucleoFramework`Private`$runprogram = False; 
+       NucleoFramework`Private`$IMUflag = False; 
+       NucleoFramework`Private`$gyrflag = False; 
+       NucleoFramework`Private`$accflag = False; 
+       NucleoFramework`Private`$magflag = False; 
+       NucleoFramework`Private`$IMUgraphflag = False; Null),
+      Evaluator->Automatic,
+      Method->"Preemptive"]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Print",
+ CellChangeTimes->{3.676605219164299*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  TemplateBox[{Graphics3DBox[{
+      DynamicBox[
+       Typeset`ToBoxes[
+        GeometricTransformation[
+         Cuboid[{-2, -2, -2}, {2, 2, 2}], 
+         Dot[
+          RotationTransform[NucleoFramework`Private`$roll Degree, {1, 0, 0}], 
+          
+          RotationTransform[NucleoFramework`Private`$pitch Degree, {0, 1, 0}], 
+          RotationTransform[NucleoFramework`Private`$yaw Degree, {0, 0, 1}]]],
+         StandardForm, Graphics3D]], {
+       Text3DBox[
+        FormBox[
+         StyleBox["\"x\"", Large, StripOnInput -> False], TraditionalForm], {
+        7, 0, 0}], 
+       Text3DBox[
+        FormBox[
+         StyleBox["\"y\"", Large, StripOnInput -> False], TraditionalForm], {
+        0, 7, 0}], 
+       Text3DBox[
+        FormBox[
+         StyleBox["\"z\"", Large, StripOnInput -> False], TraditionalForm], {
+        0, 0, 7}]}}, {
+     ImageSize -> Medium, Axes -> True, AxesOrigin -> {0, 0, 0}, Boxed -> 
+      False, PlotRange -> {{-5, 5}, {-5, 5}, {-5, 5}}, Ticks -> None, 
+      ViewPoint -> Dynamic[NucleoFramework`Private`$pov]}],"\"IMU\""},
+   "Labeled",
+   DisplayFunction->(GridBox[{{
+       TagBox[
+        ItemBox[
+         PaneBox[
+          TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+          BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+        "SkipImageSizeLevel"]}, {
+       ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+     GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+     AutoDelete -> False, 
+     GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      BaselinePosition -> {1, 1}]& ),
+   InterpretationFunction->(RowBox[{"Labeled", "[", 
+      RowBox[{#, ",", #2}], "]"}]& )], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{GridBox[{
+        {
+         RadioButtonBox[Dynamic[NucleoFramework`Private`$pov], {{0, 0, 
+           DirectedInfinity[1]}},
+          DefaultBaseStyle->"RadioButtonBar"], 
+         StyleBox["\<\"Above\"\>", "RadioButtonBarLabel",
+          StripOnInput->False]}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.21]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}], "  ", GridBox[{
+        {
+         RadioButtonBox[Dynamic[NucleoFramework`Private`$pov], {{0, 0, 
+           DirectedInfinity[-1]}},
+          DefaultBaseStyle->"RadioButtonBar"], 
+         StyleBox["\<\"Below\"\>", "RadioButtonBarLabel",
+          StripOnInput->False]}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.21]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}], "  ", GridBox[{
+        {
+         RadioButtonBox[Dynamic[NucleoFramework`Private`$pov], {{0, 
+           DirectedInfinity[-1], 0}},
+          DefaultBaseStyle->"RadioButtonBar"], 
+         StyleBox["Front", "RadioButtonBarLabel",
+          StripOnInput->False]}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.21]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}], "  ", GridBox[{
+        {
+         RadioButtonBox[Dynamic[NucleoFramework`Private`$pov], {{0, 
+           DirectedInfinity[1], 0}},
+          DefaultBaseStyle->"RadioButtonBar"], 
+         StyleBox["Back", "RadioButtonBarLabel",
+          StripOnInput->False]}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.21]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}], "  ", GridBox[{
+        {
+         RadioButtonBox[Dynamic[NucleoFramework`Private`$pov], {{
+           DirectedInfinity[1], 0, 0}},
+          DefaultBaseStyle->"RadioButtonBar"], 
+         StyleBox["Right", "RadioButtonBarLabel",
+          StripOnInput->False]}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.21]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}], "  ", GridBox[{
+        {
+         RadioButtonBox[Dynamic[NucleoFramework`Private`$pov], {{
+           DirectedInfinity[-1], 0, 0}},
+          DefaultBaseStyle->"RadioButtonBar"], 
+         StyleBox["Left", "RadioButtonBarLabel",
+          StripOnInput->False]}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.21]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}]}], "Deploy"],
+    RadioButtonBar[
+     Dynamic[NucleoFramework`Private`$pov], {{0, 0, 
+        DirectedInfinity[1]} -> "Above", {0, 0, 
+        DirectedInfinity[-1]} -> "Below", {0, 
+        DirectedInfinity[-1], 0} -> Front, {0, 
+        DirectedInfinity[1], 0} -> Back, {
+        DirectedInfinity[1], 0, 0} -> Right, {
+        DirectedInfinity[-1], 0, 0} -> Left}]], ")"}]}]], "Print",
+ CellChangeTimes->{3.676605220248763*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"NucleoFramework`ConstructServoGUI", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.673667240681332*^9, 3.673667278110669*^9}, {
+   3.6736684670871153`*^9, 3.673668467326538*^9}, {3.673668797060822*^9, 
+   3.673668800371017*^9}, 3.673741916634789*^9, {3.673742015862926*^9, 
+   3.673742017494522*^9}, 3.673742155001748*^9, {3.673746574401013*^9, 
+   3.673746574999887*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NucleoFramework`ReadSerialData", "[", "]"}]], "Input"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.676605227124579*^9}]
+}, Open  ]]
+},
+WindowSize->{720, 851},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 227, 4, 28, "Input"],
+Cell[CellGroupData[{
+Cell[810, 28, 169, 3, 28, "Input"],
+Cell[982, 33, 17151, 343, 64, "Output"]
+}, Open  ]],
+Cell[18148, 379, 68, 1, 28, "Input"],
+Cell[CellGroupData[{
+Cell[18241, 384, 147, 2, 28, "Input"],
+Cell[CellGroupData[{
+Cell[18413, 390, 4014, 82, 166, "Print"],
+Cell[22430, 474, 6305, 157, 427, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[28762, 635, 393, 6, 28, "Input"],
+Cell[CellGroupData[{
+Cell[29180, 645, 78, 1, 28, "Input"],
+Cell[29261, 648, 77, 1, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+

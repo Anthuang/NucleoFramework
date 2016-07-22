@@ -1,0 +1,731 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     29334,        723]
+NotebookOptionsPosition[     28826,        701]
+NotebookOutlinePosition[     29164,        716]
+CellTagsIndexPosition[     29121,        713]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"MessageImport", "[", "filepath_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"stream", "=", 
+        RowBox[{"OpenRead", "[", "filepath", "]"}]}], ",", "character", ",", 
+       RowBox[{"rules", "=", 
+        RowBox[{"{", "}"}]}]}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"character", "=", 
+       RowBox[{"Read", "[", 
+        RowBox[{"stream", ",", "String"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Reap", "[", 
+        RowBox[{
+         RowBox[{"While", "[", 
+          RowBox[{
+           RowBox[{"character", "=!=", "EndOfFile"}], ",", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"character", "===", "\"\<---\>\""}], ",", 
+              RowBox[{
+               RowBox[{"Sow", "[", 
+                RowBox[{"Flatten", "[", "rules", "]"}], "]"}], ";", 
+               RowBox[{"rules", "=", 
+                RowBox[{"{", "}"}]}]}], ",", 
+              RowBox[{"AppendTo", "[", 
+               RowBox[{"rules", ",", 
+                RowBox[{"StringCases", "[", 
+                 RowBox[{"character", ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"var", ":", 
+                    RowBox[{"(", 
+                    RowBox[{"WordCharacter", ".."}], ")"}]}], "~~", 
+                    "\"\<:\>\"", "~~", "Whitespace", "~~", 
+                    RowBox[{"value", ":", "NumberString"}]}], 
+                    "\[RuleDelayed]", 
+                    RowBox[{"(", 
+                    RowBox[{"var", "\[Rule]", 
+                    RowBox[{"ToExpression", "[", "value", "]"}]}], ")"}]}], 
+                    ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"var", ":", 
+                    RowBox[{"(", 
+                    RowBox[{"WordCharacter", ".."}], ")"}]}], "~~", 
+                    "\"\<:\>\"", "~~", "Whitespace"}], "\[RuleDelayed]", 
+                    RowBox[{"(", 
+                    RowBox[{"\"\<Head\>\"", "\[Rule]", "var"}], ")"}]}]}], 
+                   "}"}]}], "]"}]}], "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"character", "=", 
+             RowBox[{"Read", "[", 
+              RowBox[{"stream", ",", "String"}], "]"}]}]}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Close", "[", "stream", "]"}], ";"}], "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"2", ",", "1"}], "]"}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RosCommand", "[", "Command_", "]"}], ":=", 
+   RowBox[{"WaitNext", "[", 
+    RowBox[{"ParallelSubmit", "/@", 
+     RowBox[{"Unevaluated", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"WriteString", "[", 
+           RowBox[{
+            RowBox[{"OpenWrite", "[", "\"\<script\>\"", "]"}], ",", 
+            "\"\<bash -c \\\"source /opt/ros/kinetic/setup.bash && source \
+~/catkin_ws/devel/setup.bash && \>\"", ",", "Command", ",", "\"\<\\\"\>\""}], 
+           "]"}], ",", 
+          RowBox[{"Close", "[", "\"\<script\>\"", "]"}], ",", 
+          RowBox[{"SetDirectory", "[", "\"\</\>\"", "]"}], ",", 
+          RowBox[{"SetEnvironment", "[", 
+           RowBox[{"\"\<LD_LIBRARY_PATH\>\"", "\[Rule]", "\"\<\>\""}], "]"}], 
+          ",", 
+          RowBox[{"RunProcess", "[", 
+           RowBox[{"\"\<script\>\"", ",", "\"\<StandardOutput\>\""}], "]"}], 
+          ",", 
+          RowBox[{"SetEnvironment", "[", 
+           RowBox[{"\"\<LD_LIBRARY_PATH\>\"", "\[Rule]", 
+            RowBox[{"FileNameJoin", "[", 
+             RowBox[{"{", 
+              RowBox[{
+              "$InstallationDirectory", ",", "\"\<SystemFiles\>\"", ",", 
+               "\"\<Libraries\>\"", ",", "$SystemID"}], "}"}], "]"}]}], "]"}],
+           ",", 
+          RowBox[{"SetDirectory", "[", "\"\</home/thomaseh\>\"", "]"}]}], 
+         "}"}], ",", 
+        RowBox[{"Pause", "[", "5", "]"}]}], "}"}], "]"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.675646100981824*^9, 3.675646113940234*^9}, {
+  3.675646180739143*^9, 3.6756461862257643`*^9}, {3.6756508468595667`*^9, 
+  3.675650847738893*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RosCommand", "[", "rosstart", "]"}]], "Input",
+ CellChangeTimes->{{3.67564622551054*^9, 3.67564623330516*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "Null", ",", "\<\"script\"\>", ",", "\<\"/\"\>", ",", "Null", 
+     ",", "\<\"\"\>", ",", "Null", ",", "\<\"/home/thomaseh\"\>"}], "}"}], 
+   ",", 
+   InterpretationBox[
+    FrameBox[
+     TemplateBox[{DynamicBox[
+        ToBoxes[
+         Parallel`Concurrency`Private`evalIcon[
+          ReplaceAll[
+           Parallel`Developer`ProcessState[
+            EvaluationObject[1, {
+              WriteString[
+               OpenWrite["script"], 
+               "bash -c \"source /opt/ros/indigo/setup.bash && source \
+~/catkin_ws/devel/setup.bash && ", $CellContext`rosstart, "\""], 
+              Close["script"], 
+              SetDirectory["/"], 
+              SetEnvironment["LD_LIBRARY_PATH" -> ""], 
+              RunProcess["script", "StandardOutput"], 
+              SetEnvironment[
+              "LD_LIBRARY_PATH" -> 
+               FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                  "Libraries", $SystemID}]], 
+              SetDirectory["/home/thomaseh"]}, Null, 
+             Parallel`Concurrency`Private`state$1549]], 
+           Parallel`Concurrency`Private`stateTrans]], StandardForm]],
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {6, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[6]],TagBox[
+        GridBox[{{
+           PaneBox[
+            StyleBox[
+             TagBox[
+              RowBox[{"{", 
+                RowBox[{
+                  RowBox[{"WriteString", "[", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    "]"}], ",", 
+                  RowBox[{"\[LeftSkeleton]", "5", "\[RightSkeleton]"}], ",", 
+                  RowBox[{"SetDirectory", "[", 
+                    RowBox[{"\"\"", "\[Ellipsis]", "\"\""}], "]"}]}], "}"}], 
+              Short[#, 0.6]& ], Small, StripOnInput -> False], 
+            ImageSize -> {Full, 18}, ImageSizeAction -> "ResizeToFit"]}, {
+           DynamicBox[
+            ToBoxes[
+             Style[
+              ReplaceAll[
+               Parallel`Developer`ProcessState[
+                EvaluationObject[1, {
+                  WriteString[
+                   OpenWrite["script"], 
+                   "bash -c \"source /opt/ros/indigo/setup.bash && source \
+~/catkin_ws/devel/setup.bash && ", $CellContext`rosstart, "\""], 
+                  Close["script"], 
+                  SetDirectory["/"], 
+                  SetEnvironment["LD_LIBRARY_PATH" -> ""], 
+                  RunProcess["script", "StandardOutput"], 
+                  SetEnvironment[
+                  "LD_LIBRARY_PATH" -> 
+                   FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "Libraries", $SystemID}]], 
+                  SetDirectory["/home/thomaseh"]}, Null, 
+                 Parallel`Concurrency`Private`state$1549]], {
+               Parallel`Developer`created -> "new", Parallel`Developer`queued -> 
+                "ready for processing", Parallel`Developer`running[
+                  Pattern[Parallel`Concurrency`Private`k, 
+                   Blank[]]] :> StringForm["running on kernel `1`", 
+                  Parallel`Developer`KernelID[
+                  Parallel`Concurrency`Private`k]], 
+                Parallel`Developer`finished[
+                  Pattern[Parallel`Concurrency`Private`r, 
+                   BlankNullSequence[]]] :> "received", 
+                Parallel`Developer`dequeued[
+                  Pattern[Parallel`Concurrency`Private`r, 
+                   BlankNullSequence[]]] :> "finished", 
+                Pattern[Parallel`Concurrency`Private`e, 
+                  Blank[]] :> Parallel`Concurrency`Private`e}], "Label", 
+              Gray], StandardForm]]}}, 
+         GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+         "Column", 
+         GridBoxItemSize -> {"Columns" -> {{10}}, "Rows" -> {{Automatic}}}], 
+        "Column"]},
+      "RowDefault"],
+     Background->Dynamic[
+       Part[Parallel`Concurrency`Private`bgColors, 
+        ReplaceAll[
+         Parallel`Developer`ProcessState[
+          EvaluationObject[1, {
+            WriteString[
+             OpenWrite["script"], 
+             "bash -c \"source /opt/ros/indigo/setup.bash && source \
+~/catkin_ws/devel/setup.bash && ", $CellContext`rosstart, "\""], 
+            Close["script"], 
+            SetDirectory["/"], 
+            SetEnvironment["LD_LIBRARY_PATH" -> ""], 
+            RunProcess["script", "StandardOutput"], 
+            SetEnvironment[
+            "LD_LIBRARY_PATH" -> 
+             FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                "Libraries", $SystemID}]], 
+            SetDirectory["/home/thomaseh"]}, Null, 
+           Parallel`Concurrency`Private`state$1549]], 
+         Parallel`Concurrency`Private`stateTrans]]],
+     FrameMargins->5,
+     FrameStyle->GrayLevel[0.5],
+     RoundingRadius->6,
+     StripOnInput->False],
+    EvaluationObject[1, {
+      WriteString[
+       OpenWrite["script"], 
+       "bash -c \"source /opt/ros/indigo/setup.bash && source \
+~/catkin_ws/devel/setup.bash && ", $CellContext`rosstart, "\""], 
+      Close["script"], 
+      SetDirectory["/"], 
+      SetEnvironment["LD_LIBRARY_PATH" -> ""], 
+      RunProcess["script", "StandardOutput"], 
+      SetEnvironment[
+      "LD_LIBRARY_PATH" -> 
+       FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+          "Libraries", $SystemID}]], 
+      SetDirectory["/home/thomaseh"]}, Null, 
+     Parallel`Concurrency`Private`state$1549]], ",", 
+   RowBox[{"{", 
+    InterpretationBox[
+     FrameBox[
+      TemplateBox[{DynamicBox[
+         ToBoxes[
+          Parallel`Concurrency`Private`evalIcon[
+           ReplaceAll[
+            Parallel`Developer`ProcessState[
+             EvaluationObject[2, 
+              Pause[5], Null, Parallel`Concurrency`Private`state$1550]], 
+            Parallel`Concurrency`Private`stateTrans]], StandardForm]],
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {6, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[6]],TagBox[
+         GridBox[{{
+            PaneBox[
+             StyleBox[
+              TagBox[
+               RowBox[{"Pause", "[", "5", "]"}], Short[#, 0.6]& ], Small, 
+              StripOnInput -> False], ImageSize -> {Full, 18}, 
+             ImageSizeAction -> "ResizeToFit"]}, {
+            DynamicBox[
+             ToBoxes[
+              Style[
+               ReplaceAll[
+                Parallel`Developer`ProcessState[
+                 EvaluationObject[2, 
+                  Pause[5], Null, Parallel`Concurrency`Private`state$1550]], {
+                Parallel`Developer`created -> "new", 
+                 Parallel`Developer`queued -> "ready for processing", 
+                 Parallel`Developer`running[
+                   Pattern[Parallel`Concurrency`Private`k, 
+                    Blank[]]] :> StringForm["running on kernel `1`", 
+                   Parallel`Developer`KernelID[
+                   Parallel`Concurrency`Private`k]], 
+                 Parallel`Developer`finished[
+                   Pattern[Parallel`Concurrency`Private`r, 
+                    BlankNullSequence[]]] :> "received", 
+                 Parallel`Developer`dequeued[
+                   Pattern[Parallel`Concurrency`Private`r, 
+                    BlankNullSequence[]]] :> "finished", 
+                 Pattern[Parallel`Concurrency`Private`e, 
+                   Blank[]] :> Parallel`Concurrency`Private`e}], "Label", 
+               Gray], StandardForm]]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+          "Column", 
+          GridBoxItemSize -> {"Columns" -> {{10}}, "Rows" -> {{Automatic}}}], 
+         "Column"]},
+       "RowDefault"],
+      Background->Dynamic[
+        Part[Parallel`Concurrency`Private`bgColors, 
+         ReplaceAll[
+          Parallel`Developer`ProcessState[
+           EvaluationObject[2, 
+            Pause[5], Null, Parallel`Concurrency`Private`state$1550]], 
+          Parallel`Concurrency`Private`stateTrans]]],
+      FrameMargins->5,
+      FrameStyle->GrayLevel[0.5],
+      RoundingRadius->6,
+      StripOnInput->False],
+     EvaluationObject[2, 
+      Pause[5], Null, Parallel`Concurrency`Private`state$1550]], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.675646274107873*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RosCommand", "[", "\"\<rosrun turtlesim turtle_teleop_key\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.675650780663909*^9, 3.675650783186854*^9}, {
+  3.675650820522285*^9, 3.67565082356901*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "Null", ",", "\<\"script\"\>", ",", "\<\"/\"\>", ",", "Null", 
+     ",", "\<\"\"\>", ",", "Null", ",", "\<\"/home/thomaseh\"\>"}], "}"}], 
+   ",", 
+   InterpretationBox[
+    FrameBox[
+     TemplateBox[{DynamicBox[
+        ToBoxes[
+         Parallel`Concurrency`Private`evalIcon[
+          ReplaceAll[
+           Parallel`Developer`ProcessState[
+            EvaluationObject[3, {
+              WriteString[
+               OpenWrite["script"], 
+               "bash -c \"source /opt/ros/indigo/setup.bash && source \
+~/catkin_ws/devel/setup.bash && ", "rosrun turtlesim turtle_teleop_key", 
+               "\""], 
+              Close["script"], 
+              SetDirectory["/"], 
+              SetEnvironment["LD_LIBRARY_PATH" -> ""], 
+              RunProcess["script", "StandardOutput"], 
+              SetEnvironment[
+              "LD_LIBRARY_PATH" -> 
+               FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                  "Libraries", $SystemID}]], 
+              SetDirectory["/home/thomaseh"]}, Null, 
+             Parallel`Concurrency`Private`state$12394]], 
+           Parallel`Concurrency`Private`stateTrans]], StandardForm]],
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {6, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[6]],TagBox[
+        GridBox[{{
+           PaneBox[
+            StyleBox[
+             TagBox[
+              RowBox[{"{", 
+                RowBox[{
+                  RowBox[{"WriteString", "[", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    "]"}], ",", 
+                  RowBox[{"\[LeftSkeleton]", "5", "\[RightSkeleton]"}], ",", 
+                  RowBox[{"SetDirectory", "[", 
+                    RowBox[{"\"\"", "\[Ellipsis]", "\"\""}], "]"}]}], "}"}], 
+              Short[#, 0.6]& ], Small, StripOnInput -> False], 
+            ImageSize -> {Full, 18}, ImageSizeAction -> "ResizeToFit"]}, {
+           DynamicBox[
+            ToBoxes[
+             Style[
+              ReplaceAll[
+               Parallel`Developer`ProcessState[
+                EvaluationObject[3, {
+                  WriteString[
+                   OpenWrite["script"], 
+                   "bash -c \"source /opt/ros/indigo/setup.bash && source \
+~/catkin_ws/devel/setup.bash && ", "rosrun turtlesim turtle_teleop_key", 
+                   "\""], 
+                  Close["script"], 
+                  SetDirectory["/"], 
+                  SetEnvironment["LD_LIBRARY_PATH" -> ""], 
+                  RunProcess["script", "StandardOutput"], 
+                  SetEnvironment[
+                  "LD_LIBRARY_PATH" -> 
+                   FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                    "Libraries", $SystemID}]], 
+                  SetDirectory["/home/thomaseh"]}, Null, 
+                 Parallel`Concurrency`Private`state$12394]], {
+               Parallel`Developer`created -> "new", Parallel`Developer`queued -> 
+                "ready for processing", Parallel`Developer`running[
+                  Pattern[Parallel`Concurrency`Private`k, 
+                   Blank[]]] :> StringForm["running on kernel `1`", 
+                  Parallel`Developer`KernelID[
+                  Parallel`Concurrency`Private`k]], 
+                Parallel`Developer`finished[
+                  Pattern[Parallel`Concurrency`Private`r, 
+                   BlankNullSequence[]]] :> "received", 
+                Parallel`Developer`dequeued[
+                  Pattern[Parallel`Concurrency`Private`r, 
+                   BlankNullSequence[]]] :> "finished", 
+                Pattern[Parallel`Concurrency`Private`e, 
+                  Blank[]] :> Parallel`Concurrency`Private`e}], "Label", 
+              Gray], StandardForm]]}}, 
+         GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+         "Column", 
+         GridBoxItemSize -> {"Columns" -> {{10}}, "Rows" -> {{Automatic}}}], 
+        "Column"]},
+      "RowDefault"],
+     Background->Dynamic[
+       Part[Parallel`Concurrency`Private`bgColors, 
+        ReplaceAll[
+         Parallel`Developer`ProcessState[
+          EvaluationObject[3, {
+            WriteString[
+             OpenWrite["script"], 
+             "bash -c \"source /opt/ros/indigo/setup.bash && source \
+~/catkin_ws/devel/setup.bash && ", "rosrun turtlesim turtle_teleop_key", 
+             "\""], 
+            Close["script"], 
+            SetDirectory["/"], 
+            SetEnvironment["LD_LIBRARY_PATH" -> ""], 
+            RunProcess["script", "StandardOutput"], 
+            SetEnvironment[
+            "LD_LIBRARY_PATH" -> 
+             FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+                "Libraries", $SystemID}]], 
+            SetDirectory["/home/thomaseh"]}, Null, 
+           Parallel`Concurrency`Private`state$12394]], 
+         Parallel`Concurrency`Private`stateTrans]]],
+     FrameMargins->5,
+     FrameStyle->GrayLevel[0.5],
+     RoundingRadius->6,
+     StripOnInput->False],
+    EvaluationObject[3, {
+      WriteString[
+       OpenWrite["script"], 
+       "bash -c \"source /opt/ros/indigo/setup.bash && source \
+~/catkin_ws/devel/setup.bash && ", "rosrun turtlesim turtle_teleop_key", 
+       "\""], 
+      Close["script"], 
+      SetDirectory["/"], 
+      SetEnvironment["LD_LIBRARY_PATH" -> ""], 
+      RunProcess["script", "StandardOutput"], 
+      SetEnvironment[
+      "LD_LIBRARY_PATH" -> 
+       FileNameJoin[{$InstallationDirectory, "SystemFiles", 
+          "Libraries", $SystemID}]], 
+      SetDirectory["/home/thomaseh"]}, Null, 
+     Parallel`Concurrency`Private`state$12394]], ",", 
+   RowBox[{"{", 
+    InterpretationBox[
+     FrameBox[
+      TemplateBox[{DynamicBox[
+         ToBoxes[
+          Parallel`Concurrency`Private`evalIcon[
+           ReplaceAll[
+            Parallel`Developer`ProcessState[
+             EvaluationObject[4, 
+              Pause[5], Null, Parallel`Concurrency`Private`state$12395]], 
+            Parallel`Concurrency`Private`stateTrans]], StandardForm]],
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {6, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[6]],TagBox[
+         GridBox[{{
+            PaneBox[
+             StyleBox[
+              TagBox[
+               RowBox[{"Pause", "[", "5", "]"}], Short[#, 0.6]& ], Small, 
+              StripOnInput -> False], ImageSize -> {Full, 18}, 
+             ImageSizeAction -> "ResizeToFit"]}, {
+            DynamicBox[
+             ToBoxes[
+              Style[
+               ReplaceAll[
+                Parallel`Developer`ProcessState[
+                 EvaluationObject[4, 
+                  Pause[5], Null, 
+                  Parallel`Concurrency`Private`state$12395]], {
+                Parallel`Developer`created -> "new", 
+                 Parallel`Developer`queued -> "ready for processing", 
+                 Parallel`Developer`running[
+                   Pattern[Parallel`Concurrency`Private`k, 
+                    Blank[]]] :> StringForm["running on kernel `1`", 
+                   Parallel`Developer`KernelID[
+                   Parallel`Concurrency`Private`k]], 
+                 Parallel`Developer`finished[
+                   Pattern[Parallel`Concurrency`Private`r, 
+                    BlankNullSequence[]]] :> "received", 
+                 Parallel`Developer`dequeued[
+                   Pattern[Parallel`Concurrency`Private`r, 
+                    BlankNullSequence[]]] :> "finished", 
+                 Pattern[Parallel`Concurrency`Private`e, 
+                   Blank[]] :> Parallel`Concurrency`Private`e}], "Label", 
+               Gray], StandardForm]]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+          "Column", 
+          GridBoxItemSize -> {"Columns" -> {{10}}, "Rows" -> {{Automatic}}}], 
+         "Column"]},
+       "RowDefault"],
+      Background->Dynamic[
+        Part[Parallel`Concurrency`Private`bgColors, 
+         ReplaceAll[
+          Parallel`Developer`ProcessState[
+           EvaluationObject[4, 
+            Pause[5], Null, Parallel`Concurrency`Private`state$12395]], 
+          Parallel`Concurrency`Private`stateTrans]]],
+      FrameMargins->5,
+      FrameStyle->GrayLevel[0.5],
+      RoundingRadius->6,
+      StripOnInput->False],
+     EvaluationObject[4, 
+      Pause[5], Null, Parallel`Concurrency`Private`state$12395]], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.675650824753474*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lx", "=", "2.0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ly", "=", "0.0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lz", "=", "0.0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ax", "=", "0.0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ay", "=", "0.0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"az", "=", "2.0"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ToString", "[", 
+     RowBox[{"Round", "[", 
+      RowBox[{"lx", ",", "0.1"}], "]"}], "]"}], "<>", "\"\< \>\"", "<>", 
+    RowBox[{"ToString", "[", "ly", "]"}], "<>", "\"\< \>\"", "<>", 
+    RowBox[{"ToString", "[", "lz", "]"}], "<>", "\"\< \>\"", "<>", 
+    RowBox[{"ToString", "[", "ax", "]"}], "<>", "\"\< \>\"", "<>", 
+    RowBox[{"ToString", "[", "ay", "]"}], "<>", "\"\< \>\"", "<>", 
+    RowBox[{"ToString", "[", "az", "]"}]}], ">>", "\"\<file.txt\>\""}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"StringJoin", "[", 
+   RowBox[{"\"\<s \>\"", ",", " ", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Round", "[", 
+           RowBox[{"lx", ",", "0.1"}], "]"}], "\[GreaterEqual]", "0"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"lx", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "3", ",", 
+           "\"\<0\>\""}], "]"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"lx", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "4", ",", 
+           "\"\<0\>\""}], "]"}]}], "]"}], ",", "\"\<  \>\"", ",", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Round", "[", 
+           RowBox[{"ly", ",", "0.1"}], "]"}], "\[GreaterEqual]", "0"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"ly", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "3", ",", 
+           "\"\<0\>\""}], "]"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"ly", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "4", ",", 
+           "\"\<0\>\""}], "]"}]}], "]"}], ",", "\"\<  \>\"", ",", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Round", "[", 
+           RowBox[{"lz", ",", "0.1"}], "]"}], "\[GreaterEqual]", "0"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"lz", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "3", ",", 
+           "\"\<0\>\""}], "]"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"lz", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "4", ",", 
+           "\"\<0\>\""}], "]"}]}], "]"}], ",", " ", "\"\<  \>\"", ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Round", "[", 
+           RowBox[{"ax", ",", "0.1"}], "]"}], "\[GreaterEqual]", "0"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"ax", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "3", ",", 
+           "\"\<0\>\""}], "]"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"ax", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "4", ",", 
+           "\"\<0\>\""}], "]"}]}], "]"}], ",", "\"\<  \>\"", ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Round", "[", 
+           RowBox[{"ay", ",", "0.1"}], "]"}], "\[GreaterEqual]", "0"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"ay", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "3", ",", 
+           "\"\<0\>\""}], "]"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"ay", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "4", ",", 
+           "\"\<0\>\""}], "]"}]}], "]"}], ",", "\"\<  \>\"", ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Round", "[", 
+           RowBox[{"az", ",", "0.1"}], "]"}], "\[GreaterEqual]", "0"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"az", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "3", ",", 
+           "\"\<0\>\""}], "]"}], ",", 
+         RowBox[{"PadRight", "[", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"Round", "[", 
+              RowBox[{"az", ",", "0.1"}], "]"}], "]"}], "]"}], ",", "4", ",", 
+           "\"\<0\>\""}], "]"}]}], "]"}]}], "\[IndentingNewLine]", "}"}], 
+     "\[IndentingNewLine]", "]"}], ",", " ", "\"\< e\>\""}], "]"}], ">>", 
+  "\"\<file.txt\>\""}]}], "Input",
+ CellChangeTimes->{{3.675646812983467*^9, 3.675646812993039*^9}, {
+   3.6756468598315983`*^9, 3.675646902590588*^9}, 3.675647910766734*^9, {
+   3.675647979077694*^9, 3.675648146828795*^9}, {3.675648375267441*^9, 
+   3.6756483919150553`*^9}, {3.6756486849372807`*^9, 3.675648688816758*^9}, {
+   3.675649097438444*^9, 3.6756491245424147`*^9}, {3.6756492348532143`*^9, 
+   3.675649353733136*^9}, {3.675649925370584*^9, 3.6756499571215677`*^9}, 
+   3.675650031578055*^9, {3.67565060849445*^9, 3.675650664630391*^9}}]
+},
+WindowSize->{928, 1148},
+WindowMargins->{{Automatic, -10}, {Automatic, -10}},
+FrontEndVersion->"10.4 for Linux x86 (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4335, 106, 473, "Input"],
+Cell[CellGroupData[{
+Cell[4918, 130, 134, 2, 32, "Input"],
+Cell[5055, 134, 8394, 194, 97, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13486, 333, 221, 4, 32, "Input"],
+Cell[13710, 339, 8539, 199, 97, "Output"]
+}, Open  ]],
+Cell[22264, 541, 6558, 158, 561, "Input"]
+}
+]
+*)
+
