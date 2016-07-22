@@ -1,5 +1,4 @@
-# Nucleo Framework :sunny: :sunny: :sunny:
-## Overview
+# Nucleo Framework
 Framework in Mathematica for communication with other platforms for robotic applications.
 
 The goal is to provide a platform where the user can perform both control and data analysis together.
@@ -13,5 +12,5 @@ We aim to provide a platform where the user can perform tasks, control, and data
 * Serial communication
 * Simple GUI and graphing
 
-## IMU Demo
+## IMU Graphing Demo
 ![demo](https://github.com/Anthuang/NucleoFramework/blob/master/imudemo.gif)
