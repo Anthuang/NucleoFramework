@@ -15,3 +15,8 @@ We aim to provide a platform where the user can perform tasks, control, and data
 
 ## IMU Graphing Demo
 ![demo](https://github.com/Anthuang/NucleoFramework/blob/master/imudemo.gif)
+
+## Possible Additions
+* Improve speed of communication
+* Communication between Mathematica and multiple boards
+* Communication between Mathematica and simulation applications
