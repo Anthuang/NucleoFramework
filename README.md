@@ -24,3 +24,6 @@ All messages must follow the following format:
 
 ## IMU Graphing Demo
 ![demo](https://github.com/Anthuang/NucleoFramework/blob/master/imudemo.gif)
+
+## Contact
+For any comments or suggestions, please contact us at thomaseh@umich.edu
